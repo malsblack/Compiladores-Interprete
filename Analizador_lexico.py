@@ -1,7 +1,7 @@
 from colorama import init, Fore, Style
 from tokens import *
 import re
-# Para inicializar los colores de colorama y autoresetearlos
+# Para inicializar los colores de colorama y autoresetearlosa
 init(autoreset=True)
 
 #Se crean las expresiones regulares
