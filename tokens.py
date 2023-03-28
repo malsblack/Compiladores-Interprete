@@ -18,7 +18,7 @@ tokens = {
 "identificador":"IDENTIFICADOR",
 "cadena":"CADENA",
 "numero":"NUMERO",
-"(":"PARENTESIS",
+"(":"PARENTESISABRE",
 ")":"PARENTESIS",
 "{":"LLAVE",
 "}":"LLAVE",
@@ -26,7 +26,7 @@ tokens = {
 ".":"PUNTO",
 ";":"PUNTOYCOMA",
 "-":"MENOS",
-"+":"MAS",
+"9+":"MAS",
 "*":"MULTIPLICACION",
 "/":"DIVISION",
 "!":"NEGACION",
@@ -39,7 +39,17 @@ tokens = {
 ">=":"MAYOROIGUAL",
 "//":"COMENTARIO",
 "/*":"COMENTARIO",
-"*/":"COMENTARIO"
+"*/":"COMENTARIO",
+"1":"NUMERO",
+"2":"NUMERO",
+"3":"NUMERO",
+"4":"NUMERO",
+"5":"NUMERO",
+"6":"NUMERO",
+"7":"NUMERO",
+"8":"NUMERO",
+"9":"NUMERO",
+"0":"NUMERO"
        }
 
 
