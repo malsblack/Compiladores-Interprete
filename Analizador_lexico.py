@@ -1,6 +1,8 @@
-from colorama import init, Fore, Style
-from tokens import *
-import re
+
+from colorama import init, Fore, Style # Se importa colorama, para darle formato a la salida de consola
+from tokens import * # importamos tokens, la cual es un archivo que creamos en python para guardar los tokens del analizador lexico
+
+import re # Se importa la libreria re, para crear expresiones regulares.
 # Para inicializar los colores de colorama y autoresetearlosa
 init(autoreset=True)
 
