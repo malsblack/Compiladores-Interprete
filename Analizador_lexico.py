@@ -56,8 +56,8 @@ print((Fore.BLUE+"INSTITUTO POLITECNICO NACIONAL").center(50," "))
 print((Fore.BLUE+"ESCUELA SUPERIOR DE COMPUTO").center(50," "))
 print((Fore.RED+"COMPILADORES").center(50," "))
 print((Fore.GREEN+ Style.BRIGHT+ "   SELU V1.1   ").center(50," "))
-archivo=open("codigo.txt","r")
 
+archivo=open("codigo.txt","r")
 col_width=20
 data=[["IDENTIFICADOR","LEXEMA","LITERAL","LINEA"]]
 print(Fore.BLUE + "{:{width}} {:{width}} {:{width}} {:{width}}".format(data[0][0], data[0][1],data[0][2],data[0][3], width=col_width) + Style.RESET_ALL)
