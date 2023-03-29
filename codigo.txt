@@ -1,5 +1,4 @@
-clase, 800+8 para + 900
-8.0
-luis, como estas 8 +0
-
-para si mientras clase si parentesis ( = + - *
+i=0
+i='hola'
+Si i="hola" entonces:
+    regresa "adios"
