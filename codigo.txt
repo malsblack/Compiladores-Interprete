@@ -1,4 +1,5 @@
-i=0 hola
-i='hola'
-Si i="hola" entonces:
-    regresa "adios"
+a=2
+b=3
+c=a+b
+mientras c<=5 entonces
+    imprimir("Hola")
