@@ -1,5 +1,4 @@
 a=2
-b=3
-c=a+b
-mientras c<=5 entonces
-    imprimir("Hola")
+b=2
+si a=2 entonces
+    print 3

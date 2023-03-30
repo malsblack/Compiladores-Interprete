@@ -13,6 +13,7 @@ patron_num = r'\d+'
 identificador=[]
 operador=[]
 numeros=[]
+col_width=20
 
 
 
@@ -59,7 +60,7 @@ print((Fore.GREEN+ Style.BRIGHT+ "   SELU V1.1   ").center(50," "))
 
 data=[["IDENTIFICADOR","LEXEMA","LITERAL","LINEA"]]
 print(Fore.BLUE + "{:{width}} {:{width}} {:{width}} {:{width}}".format(data[0][0], data[0][1],data[0][2],data[0][3], width=col_width) + Style.RESET_ALL)
-print("-" * (col_width * 4))
+print("-" *  4)
 
 
 
