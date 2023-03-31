@@ -22,6 +22,7 @@ estado_final = {estado_numero, estado_palabra, estado_operador}
 datos=[]  
 aux=[] 
 lista=[]
+p=[]
 #-----------------------------------------------------------------------------------------------------------------------------
 #FUNCIONES
 
@@ -67,6 +68,7 @@ def analizador(input_string,i):
                 lista.append([nuevo_estado,lexema,"INT",i])
                 pass
             else:
+                print(lista)
                 lista.append([nuevo_estado,lexema,"",i])
                 pass
                 
@@ -93,7 +95,6 @@ for linea in archivo:
     i+=1
     datos.append([linea.strip('\n').lower(),i])
 lectura_datos(datos)
-print(lista)
 
 
 
