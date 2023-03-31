@@ -95,7 +95,7 @@ for linea in archivo:
     i+=1
     datos.append([linea.strip('\n').lower(),i])
 lectura_datos(datos)
-printI("hola")
+
 
 
 
