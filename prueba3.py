@@ -27,4 +27,7 @@ lista.append(linea)
 
 for palabra in lista:
     lector(palabra)
+    palabras.append("".join(aux))
+    aux.clear()
+    
 
