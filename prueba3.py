@@ -4,7 +4,7 @@ aux=[]
 palabras=[]
 def lector(palabra):
     for caracter in palabra:
-        if caracter==None:
+        if caracter==" ":
             pass
         if caracter in patron_identificador:
             aux.append(caracter)
@@ -14,7 +14,7 @@ def lector(palabra):
             else:
                 palabras.append("".join(aux))
                 aux.clear()
-                print(palabras)
+                
        
 
 lista=[]
@@ -29,5 +29,6 @@ for palabra in lista:
     lector(palabra)
     palabras.append("".join(aux))
     aux.clear()
+    print(palabras)
     
 
