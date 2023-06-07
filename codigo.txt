@@ -1,7 +1,3 @@
-a=2 z
-b=2
-si a=2 entonces
-    print 3
-    'hola'
-por entonces
-3*3gola
+for i in range(200):
+    print("holamundo22)"
+    /* grtgsdgsdv 2+2 */ hola
