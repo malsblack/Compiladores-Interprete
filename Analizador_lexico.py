@@ -1,19 +1,22 @@
 from colorama import init, Fore, Style
-from tokens import *
-import re
+from AFD import *
+import json
 #from tabulate import tabulate
 # Para inicializar los colores de colorama y autoresetearlos
 init(autoreset=True)
 
-#Se crean las expresiones regulares
-patron_identificador = r'[\"]+[a-zA-Z]+[\"]|[\']+[a-zA-Z]+[\']|[a-zA-Z]+'
-patron_operador=r'[\-\/\*\=\+\(\)\{\}\!\<\,\.\;\>]'
-patron_num = r'\d+'
+tokens=json.load(open("tokens.json"))
+palabras_reservadas=tokens["Palabas_reservadas"]
+numeros=tokens["Numeros"]
+operadores=tokens["Operadores"]
+
+
 #se crean los arreglos en los cuales se van guardando los datos que alamcenamos para asi compararlos y posteriormente analizarlos
 identificador=[]
 operador=[]
 numeros=[]
 col_width=20
+data=[]
 
 
 
@@ -21,11 +24,9 @@ col_width=20
 
 
 
-def analizador(i,linea):
-    identificador_elemnto=(re.findall(patron_identificador,linea))
-    identificador_numero=(re.findall(patron_num,linea))
-    identificador_operador=(re.findall(patron_operador,linea))
-
+def analizador(datos):
+    for cadenas in datos:
+        print(cadenas)
 
     for a in identificador_elemnto:
         final=tokens.get(a)
@@ -49,8 +50,7 @@ def analizador(i,linea):
     for c in identificador_operador:
         busqueda=tokens.get(c)
         data.append([str(busqueda),c,"",i])    
-        
-
+   
 
 
 print((Fore.BLUE+"INSTITUTO POLITECNICO NACIONAL").center(50," "))
@@ -63,13 +63,7 @@ print(Fore.BLUE + "{:{width}} {:{width}} {:{width}} {:{width}}".format(data[0][0
 print("-" *  4)
 
 
-
-archivo=open("codigo.txt","r")
-col_width=20
-i=0
-for linea in archivo:
-    i+=1
-    analizador(i,linea.lower())
+analizador(lectura(open("codigo.txt")))
 
 for row in data[1:]:
     print(Fore.GREEN+"{:{width}}".format(row[0],width=col_width),Fore.WHITE+ "{:{width}} {:{width}} {:{width}}".format(row[1],row[2], row[3], width=col_width-1))
