@@ -14,7 +14,14 @@ def escritura(lista):
     for elemento in lista:
         if elemento[0] in palabras_reservadas:
             data.append([palabras_reservadas.get(elemento[0]),elemento[0],elemento[0],elemento[1]])
-        
+        elif elemento[0][0]=='"':
+            data.append(["CADENA",elemento[0],elemento[0][1:-1],elemento[1]])
+        elif elemento[0] in operadores:
+            data.append([operadores.get(elemento[0]),elemento[0],"",elemento[1]])
+        elif elemento[0] in numeros:
+            data.append([numeros.get(elemento[0]),elemento[0],elemento[0],elemento[1]])
+        else:
+            data.append(["IDENTIFICADOR",elemento[0],elemento[0],elemento[1]])
 
 def lectura(archivo):
     for reglon,linea in enumerate(archivo):
@@ -120,7 +127,8 @@ print("-" *  4)
 
 lectura(open("codigo.txt"))
 escritura(palabras_reservadas)
-
+escritura(numeros_lista)
+escritura(operadores_lista)
     
     
 for row in data[1:]:
