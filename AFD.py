@@ -22,6 +22,10 @@ def escritura(lista):
             data.append([numeros.get(elemento[0]),elemento[0],elemento[0],elemento[1]])
         else:
             data.append(["IDENTIFICADOR",elemento[0],elemento[0],elemento[1]])
+            
+            
+
+        
 
 def lectura(archivo):
     for reglon,linea in enumerate(archivo):
@@ -126,7 +130,7 @@ print(Fore.BLUE + "{:{width}} {:{width}} {:{width}} {:{width}}".format(data[0][0
 print("-" *  4)
 
 lectura(open("codigo.txt"))
-escritura(palabras_reservadas)
+escritura(palabras)
 escritura(numeros_lista)
 escritura(operadores_lista)
     
