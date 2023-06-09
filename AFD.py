@@ -4,6 +4,7 @@ tokens=json.load(open("tokens.json"))
 palabras_reservadas=tokens["Palabas_reservadas"]
 numeros=tokens["Numeros"]
 operadores=tokens["Operadores"]
+operadores_especiales=tokens["Operadores_especiales"]
 palabras=[]
 numeros_lista=[]  
 operadores_lista=[]
@@ -12,14 +13,15 @@ col_width=20
 data=[]
 def escritura(lista):
     for elemento in lista:
+        
         if elemento[0] in palabras_reservadas:
             data.append([palabras_reservadas.get(elemento[0]),elemento[0],elemento[0],elemento[1]])
         elif elemento[0][0]=='"':
             data.append(["CADENA",elemento[0],elemento[0][1:-1],elemento[1]])
         elif elemento[0] in operadores:
             data.append([operadores.get(elemento[0]),elemento[0],"",elemento[1]])
-        elif elemento[0] in numeros:
-            data.append([numeros.get(elemento[0]),elemento[0],elemento[0],elemento[1]])
+        elif elemento[0]=="NUMERO":
+            data.append([elemento[0],elemento[1],elemento[2],elemento[3]])
         else:
             data.append(["IDENTIFICADOR",elemento[0],elemento[0],elemento[1]])
             
@@ -69,7 +71,7 @@ def lectura(archivo):
                         palabras.append([palabra,reglon+1])
                         palabra=""
                     if constructor_numero!="":
-                        numeros_lista.append([constructor_numero,reglon+1])
+                        numeros_lista.append(["NUMERO",constructor_numero,constructor_numero,reglon+1])
                         constructor_numero=""
                     if constructor_operador!="":
                         constructor_operador+=caracter
@@ -81,7 +83,7 @@ def lectura(archivo):
                     palabras.append([palabra,reglon+1])
                     palabra=""
                 if constructor_numero!="":
-                    numeros_lista.append([constructor_numero,reglon+1])
+                    numeros_lista.append(["NUMERO",constructor_numero,constructor_numero,reglon+1])
                     constructor_numero=""
                 if constructor_operador!="":
                     operadores_lista.append([constructor_operador,reglon+1])
@@ -102,7 +104,7 @@ def lectura(archivo):
                     palabras.append([palabra,reglon+1])
                     palabra=""
                 if constructor_numero!="":
-                    numeros_lista.append([constructor_numero,reglon+1])
+                    numeros_lista.append(["NUMERO",constructor_numero,constructor_numero,reglon+1])
                     constructor_numero=""
             else:
                 novalidos.append([caracter,reglon])
@@ -110,7 +112,7 @@ def lectura(archivo):
                 if palabra!="":
                     palabras.append([palabra,reglon+1])
                 elif constructor_numero!="":
-                    numeros_lista.append([constructor_numero,reglon+1])
+                    numeros_lista.append(["NUMERO",constructor_numero,constructor_numero,reglon+1])
                 elif constructor_operador!="":
                     operadores_lista.append([constructor_operador,reglon+1])
                 else:
