@@ -39,6 +39,7 @@ def escritura(lista):
             data.append(["IDENTIFICADOR",elemento[0],elemento[0],elemento[1]])
             
 def lectura(archivo):
+    aux=False
     for reglon,linea in enumerate(archivo):
 
         palabra="" 
@@ -79,8 +80,36 @@ def lectura(archivo):
                             constructor_operador=""
 
             elif caracter in operadores: #validacion operadores
-                if cadena!="":
-                    cadena+=caracter
+                if comentario!="":
+                    comentario+=caracter
+                else:
+                    
+                    if cadena!="":
+                        cadena+=caracter
+                    else:
+                        if palabra!="":
+                            palabras.append([palabra,reglon+1])
+                            palabra=""
+                        if constructor_numero!="":
+                            numeros_lista.append(["NUMERO",constructor_numero,constructor_numero,reglon+1])
+                            constructor_numero=""
+                        if constructor_operador!="":
+                            constructor_operador+=caracter
+                        else:
+                            constructor_operador+=caracter
+                    if constructor_operador=="/*":
+                        comentario+=constructor_operador
+                        constructor_operador=""
+                    elif constructor_operador=="*/":
+                        comentario+=constructor_operador
+                        data.append(["COMENTARIO",comentario,comentario,reglon+1])
+                        constructor_operador=""
+                    
+                    
+                    
+            elif caracter=='"':
+                if comentario!="":
+                    comentario+=caracter
                 else:
                     if palabra!="":
                         palabras.append([palabra,reglon+1])
@@ -89,38 +118,18 @@ def lectura(archivo):
                         numeros_lista.append(["NUMERO",constructor_numero,constructor_numero,reglon+1])
                         constructor_numero=""
                     if constructor_operador!="":
-                        constructor_operador+=caracter
-                    else:
-                        constructor_operador+=caracter
-                if constructor_operador=="*/":
-                    comentario+=constructor_operador
-                    constructor_operador=""
-                elif constructor_operador=="/*":
-                    comentario+=constructor_operador
-                    data.append(["COMENTARIO",comentario,comentario,reglon+1])
-                    
-                    
-                    
-            elif caracter=='"':
-                if palabra!="":
-                    palabras.append([palabra,reglon+1])
-                    palabra=""
-                if constructor_numero!="":
-                    numeros_lista.append(["NUMERO",constructor_numero,constructor_numero,reglon+1])
-                    constructor_numero=""
-                if constructor_operador!="":
-                    operadores_lista.append([constructor_operador,reglon+1])
-                    constructor_operador=""
-                if cadena=="":
-                    cadena+=caracter
-                else:
-                    if cadena.count('"')==1:
+                        operadores_lista.append([constructor_operador,reglon+1])
+                        constructor_operador=""
+                    if cadena=="":
                         cadena+=caracter
-                        palabras.append([cadena,reglon+1])
-                        cadena=""
                     else:
-                        pass
-                
+                        if cadena.count('"')==1:
+                            cadena+=caracter
+                            palabras.append([cadena,reglon+1])
+                            cadena=""
+                        else:
+                            pass
+                    
                     
             elif caracter ==" ":
                 if palabra!="":
@@ -131,17 +140,22 @@ def lectura(archivo):
                     constructor_numero=""
                 if cadena!="":
                     cadena+=caracter
+                if comentario!="":
+                    comentario+=caracter                
             else:
                 novalidos.append([caracter,reglon])
             if indice==len(linea)-1:
-                if palabra!="":
-                    palabras.append([palabra,reglon+1])
-                elif constructor_numero!="":
-                    numeros_lista.append(["NUMERO",constructor_numero,constructor_numero,reglon+1])
-                elif constructor_operador!="":
-                    operadores_lista.append([constructor_operador,reglon+1])
-                else:
+                if comentario!="":
                     pass
+                else:
+                    if palabra!="":
+                        palabras.append([palabra,reglon+1])
+                    elif constructor_numero!="":
+                        numeros_lista.append(["NUMERO",constructor_numero,constructor_numero,reglon+1])
+                    elif constructor_operador!="":
+                        operadores_lista.append([constructor_operador,reglon+1])
+                    else:
+                        pass
 
 
   
