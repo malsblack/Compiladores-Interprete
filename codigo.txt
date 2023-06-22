@@ -7,4 +7,4 @@ for(var init = 1; init <= lim; init = init + 1)
     print fib;
     aux = aux = fib;
     fib = aux - fib;
-}
+/* hola */

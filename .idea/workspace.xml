@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42818b49-29e6-474d-9a60-5fefbd49536b" name="Changes" comment="Se integran cambios">
-      <change beforePath="$PROJECT_DIR$/AFD.py" beforeDir="false" afterPath="$PROJECT_DIR$/AFD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p.py" beforeDir="false" />
-    </list>
+    <list default="true" id="42818b49-29e6-474d-9a60-5fefbd49536b" name="Changes" comment="Se integran cambios" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,16 +18,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/52552/Desktop/ESCOM/Compiladores/Compiladores-Interprete/AnalizadorPrueba.py",
-    "two.files.diff.last.used.file": "C:/Users/52552/Desktop/ESCOM/Compiladores/Compiladores-Interprete/AnalizadorPrueba.py",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/52552/Desktop/ESCOM/Compiladores/Compiladores-Interprete/AnalizadorPrueba.py&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/52552/Desktop/ESCOM/Compiladores/Compiladores-Interprete/AnalizadorPrueba.py&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -40,6 +37,7 @@
       <option name="presentableId" value="Default" />
       <updated>1686269310833</updated>
       <workItem from="1686269314796" duration="127000" />
+      <workItem from="1686850999663" duration="27000" />
     </task>
     <servers />
   </component>

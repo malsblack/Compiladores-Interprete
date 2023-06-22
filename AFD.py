@@ -40,6 +40,8 @@ def escritura(lista):
             data2.append([operadores_especiales.get(elemento[0]),elemento[0],"",elemento[1]])
         elif elemento[0]=="NUMERO":
             data2.append([elemento[0],elemento[1],elemento[2],elemento[3]])
+        elif elemento[0]=="COMENTARIO":
+            data2.append([elemento[0],elemento[1],elemento[2],elemento[3]])
         else:
             data2.append(["IDENTIFICADOR",elemento[0],elemento[0],elemento[1]])
 def lectura(archivo):
