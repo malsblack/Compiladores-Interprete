@@ -1,6 +1,6 @@
 from colorama import init, Fore, Style
 import json
-from AnalizadorSintantico import analizador_sintantico
+import sys
 
 tokens=json.load(open("tokens.json"))
 palabras_reservadas=tokens["Palabas_reservadas"]
@@ -10,8 +10,7 @@ operadores_especiales=tokens["Operadores_especiales"]
 novalidos=[]
 col_width=20
 data=[]
-data2=[]
-
+data2=[["IDENTIFICADOR","LEXEMA","LITERAL","LINEA"]]
 
 def seperacion(lista):
     nueva_lista=[]
@@ -159,25 +158,20 @@ def lectura(archivo):
                         data.append([constructor_operador,reglon+1])
                     else:
                         pass
+def mostrar_lexico(data2):          
+    print((Fore.BLUE+"INSTITUTO POLITECNICO NACIONAL").center(50," "))
+    print((Fore.BLUE+"ESCUELA SUPERIOR DE COMPUTO").center(50," "))
+    print((Fore.RED+"COMPILADORES").center(50," "))
+    print((Fore.GREEN+ Style.BRIGHT+ "   SELU V1.1   ").center(50," "))
+    print(Fore.BLUE + "{:{width}} {:{width}} {:{width}} {:{width}}".format(data2[0][0], data2[0][1],data2[0][2],data2[0][3], width=col_width) + Style.RESET_ALL)
+    print("-" *  4)
+    for row in data2[1:]:
+        print(Fore.GREEN+"{:{width}}".format(row[0],width=col_width),Fore.WHITE+ "{:{width}} {:{width}} {:{width}}".format(row[1],row[2], row[3], width=col_width-1))
+def analizador_lexico(archivo):
+    lectura(open(archivo))
+    seperacion(data)
+    escritura(data)
+    mostrar_lexico(data2)
+    return(data2)
 
-
-  
-
-                
-print((Fore.BLUE+"INSTITUTO POLITECNICO NACIONAL").center(50," "))
-print((Fore.BLUE+"ESCUELA SUPERIOR DE COMPUTO").center(50," "))
-print((Fore.RED+"COMPILADORES").center(50," "))
-print((Fore.GREEN+ Style.BRIGHT+ "   SELU V1.1   ").center(50," "))
-
-data2=[["IDENTIFICADOR","LEXEMA","LITERAL","LINEA"]]
-print(Fore.BLUE + "{:{width}} {:{width}} {:{width}} {:{width}}".format(data2[0][0], data2[0][1],data2[0][2],data2[0][3], width=col_width) + Style.RESET_ALL)
-print("-" *  4)
-
-lectura(open("codigo.txt"))
-seperacion(data)
-escritura(data)
-analizador_sintantico(data2)
     
-#for row in data2[1:]:
-    #print(row)
-    #print(Fore.GREEN+"{:{width}}".format(row[0],width=col_width),Fore.WHITE+ "{:{width}} {:{width}} {:{width}}".format(row[1],row[2], row[3], width=col_width-1))
