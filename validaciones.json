@@ -1,5 +1,42 @@
 {
-    "DECLARATION":["CLASS","FUN","VAR","STATEMENT",""]
-    
+    "DECLARATION":{
+        "VAR":{
+            "VAR_ID":{
+                "TERMINAL":"TERMINAL"
+            },
+            "VAR_INIT":{
+                "=":"TERMINAL",
+                "EXPRESION":{
+                    "ASSIGNMENT":{
+                        "LOGIC_OR":{
+                            "LOGIC_AND":{
+                                "EQUALITY":{
+                                    "COMPARISON":{
+                                        "TERM":{
+                                            "FACTOR":{
+                                                "UNARY":{
+                                                    "!":"TERMINAL",
+                                                    "-":"TERMINAL",
+                                                    "CALL":{
+                                                        "PRIMARY":{
+                                                            "TRUE":"TERMINAL"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
 
+                            }
+                        }
+                    }
+                }
+
+
+            }
+        },
+        "STATEMENT":{},
+        "0":""
+    }
 }

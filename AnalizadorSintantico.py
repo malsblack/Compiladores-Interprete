@@ -15,13 +15,14 @@ def entrada_analizador(lista):
 def analizar(lista):
     pila=["DECLARATION"]
     for elemento in lista:
-        if pila[0]==elemento[0]:
-            pila.pop[0]
-            elemento.pop[0]
+        if elemento == pila[0]:
+            pila.pop(pila[0])
             pass
-        else:
+        elif elemento in reglas[pila[0]]:
             pila.append(reglas[pila[0]])
-            print(pila) 
+            pila.pop(0)
+        print(pila)
+
     
 def proceso_analizador(datos):
     for linea in datos:
