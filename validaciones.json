@@ -19,16 +19,84 @@
                                                     "-":"TERMINAL",
                                                     "CALL":{
                                                         "PRIMARY":{
-                                                            "TRUE":"TERMINAL"
+                                                            "TRUE":"TERMINAL",
+                                                            "FALSE":"TERMINAL",
+                                                            "NULL":"TERMINAL",
+                                                            "THIS":"TERMINAL",
+                                                            "NUMBER":"TERMINAL",
+                                                            "STRING":"TERMINAL",
+                                                            "ID":"TERMINAL",
+                                                            "( EXPRESSION )":"TERMINAL",
+                                                            "SUPER.ID":"TERMINAL"
+                                                        },
+                                                        "CALL_2":{
+                                                            "( ARGUMENTS_OPC )":"TERMINAL",
+                                                            "CALL_2":{}
                                                         }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                                                      }
+                                                    },
+                                                    "FACTOR_2":{
+                                                        "/":"TERMINAL",
+                                                        "UNARY":{},
+                                                        "FACTOR_2":{},
+                                                        "*":"TERMINAL",
+                                                        "0":""
 
-                            }
+                                                    }
+                                                },
+                                                "FACTOR_2":{
+                                                    "/":"TERMINAL",
+                                                    "UNARY":{}
+                                                
+                                                    },
+                                                    "TERM_2":{
+                                                        "-":"TERMINAL",
+                                                        "FACTOR":{},
+                                                        "TERM_2":{},
+                                                        "+":"TERMINAL",
+                                                        "0":""
+
+                                                    }
+
+                                                },
+                                                "COMPARISON_2":{
+                                                    ">":"TERMINAL",
+                                                    "TERM":{},
+                                                    "COMPARISON_2":{},
+                                                    ">=":"TERMINAL",
+                                                    "<":"TERMINAL",
+                                                    "<=":"TERMINAL",
+                                                    "0":""
+                                                }
+                                            
+
+                                            },
+                                            "EQUALITY_2":{
+                                                "!=":"TERMINAL",
+                                                "COMPARISON":{},
+                                                "EQUALITY_2":{},
+                                                "==":"TERMINAL",
+                                                "0":""
+                                            
+                                            }
+                                        },
+                                        "LOGIC_AND_2":{
+                                            "AND":"TERMINAL",
+                                            "EQUALITY":{},
+                                            "LOGIC_AND_2":{},
+                                            "0":""
+                                        }
+                                    },
+                                    "LOGIC_OR_2":{
+                                        "OR":"TERMINAL",
+                                        "LOGIC_OR_2":{},
+                                        "0":""
+                                    }
+                                },
+                            "ASSIGNMENT_OPC":{
+                                "=":"TERMINAL",
+                                "EXPRESION":{},
+                                "0":""
                         }
                     }
                 }
