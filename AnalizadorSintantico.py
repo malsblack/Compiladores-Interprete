@@ -12,16 +12,17 @@ def entrada_analizador(lista):
             diccionario_sublistas[ultimo].append(DECLARATION)
     return diccionario_sublistas
 
-def analizar(lista):
-    pila=["DECLARATION"]
-    for elemento in lista:
-        if elemento == pila[0]:
-            pila.pop(pila[0])
-            pass
-        elif elemento in reglas[pila[0]]:
-            pila.append(reglas[pila[0]])
-            pila.pop(0)
-        print(pila)
+def analizar(cadena,simbolo,reglas):
+    if simbolo in reglas:
+        for produccion in reglas[simbolo]:
+            if cadena[0]==produccion:
+                cadena.pop(cadena[0])
+                if analizar(cadena,cadena[0],reglas):
+                    return True
+    elif simbolo=="TERMINAL":
+        if cadena:
+            return False
+    return False
 
     
 def proceso_analizador(datos):
@@ -29,7 +30,11 @@ def proceso_analizador(datos):
         cadena=[]
         for tokens in datos[linea]:
             cadena.append(tokens[0])
-        analizar(cadena)
+            
+        if analizar(cadena,"DECLARATION",reglas):
+            pass
+        else:
+            print("Error de sintaxis en la linea ")
         
             
     
