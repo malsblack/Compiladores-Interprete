@@ -13,10 +13,16 @@ def entrada_analizador(lista):
     return diccionario_sublistas
 
 def analizar(cadena,simbolo,reglas):
+    print(cadena)
+    print(simbolo)
+    print(f"{reglas}\n")
     if simbolo in reglas:
+        print("y")
         for produccion in reglas[simbolo]:
             if cadena[0]==produccion:
-                cadena.pop(cadena[0])
+                
+                reglas=reglas[simbolo]
+                print(f"{reglas}\n")
                 if analizar(cadena,cadena[0],reglas):
                     return True
     elif simbolo=="TERMINAL":
