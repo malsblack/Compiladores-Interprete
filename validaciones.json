@@ -1,7 +1,7 @@
 {
     "DECLARATION":{
         "VAR":{
-            "VAR_ID":{
+            "IDENTIFICADOR":{
                 "TERMINAL":"TERMINAL"
             },
             "VAR_INIT":{

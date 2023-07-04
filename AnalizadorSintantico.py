@@ -13,22 +13,22 @@ def entrada_analizador(lista):
     return diccionario_sublistas
 
 def analizar(cadena,simbolo,reglas):
-    print(cadena)
-    print(simbolo)
-    print(f"{reglas}\n")
     if simbolo in reglas:
-        print("y")
-        for produccion in reglas[simbolo]:
-            if cadena[0]==produccion:
+        for producciones in reglas[simbolo]:
+
+            if producciones==cadena[0]:
+                aux=cadena[0]
+                cadena.pop(0)
+                analizar(cadena,cadena[0],reglas[simbolo][aux])
+            elif producciones=="TERMINAL":
+                cadena.pop(0)
+                analizar(cadena,cadena[0],reglas["VAR_INIT"])
+                return True
+            else:
+                return True
+            
                 
-                reglas=reglas[simbolo]
-                print(f"{reglas}\n")
-                if analizar(cadena,cadena[0],reglas):
-                    return True
-    elif simbolo=="TERMINAL":
-        if cadena:
-            return False
-    return False
+
 
     
 def proceso_analizador(datos):
